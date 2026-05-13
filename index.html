@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Aprenda a deixar a saída dos seus programas em C muito mais bonita usando códigos ANSI no terminal.">
+    <meta name="keywords" content="C, programação, terminal, códigos ANSI, cores, formatação">
+    <meta name="author" content="Coloque Seu Nome Aqui">
+    
+    <title>Cores no Terminal com C e ANSI</title>
+
+    <style>
+        /* Estilos básicos para deixar o HTML mais agradável aos padrões atuais */
+        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }
+        nav { background: #f4f4f4; padding: 10px 20px; border-radius: 8px; margin-bottom: 30px; }
+        nav a { margin-right: 15px; text-decoration: none; color: #0056b3; font-weight: bold; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f8f9fa; }
+        .placeholder-box { background: #e9ecef; border: 2px dashed #adb5bd; padding: 20px; text-align: center; margin-bottom: 20px; border-radius: 8px; }
+        form { background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #ddd; }
+        input, textarea { width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; box-sizing: border-box; }
+        button { padding: 10px 15px; cursor: pointer; border: none; border-radius: 4px; }
+        button[type="submit"] { background: #0056b3; color: white; }
+        button[type="reset"] { background: #6c757d; color: white; margin-left: 10px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#introducao">Introdução</a>
+        <a href="#vantagens">Vantagens</a>
+        <a href="#passo-a-passo">Como Fazer</a>
+        <a href="#tabela-cores">Tabela de Cores</a>
+        <a href="#multimidia">Mídia</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <h1 id="introducao">Estilizando o Terminal com Códigos ANSI em C</h1>
+
+    <p>Seja bem-vindo ao guia definitivo de formatação de terminal! Se você programa em C e está cansado daquela tela preta com letras brancas padronizadas, os <strong>Escape Codes ANSI</strong> são a solução perfeita para trazer cores e vida aos seus projetos.</p>
+
+    <h2 id="vantagens">Por que usar Códigos ANSI?</h2>
+    
+    <ul>
+        <li>Eles não exigem instalação de bibliotecas externas complexas.</li>
+        <li>Funcionam diretamente na função <code>printf</code> padrão da linguagem C.</li>
+        <li>Permitem destacar mensagens de erro em vermelho para facilitar o debug.</li>
+        <li>Ajudam a criar menus interativos muito mais atraentes.</li>
+        <li>São suportados nativamente pela imensa maioria dos terminais modernos (Linux, macOS e Windows).</li>
+    </ul>
+
+    <h3 id="passo-a-passo">Implementando no seu Código</h3>
+
+    <ol>
+        <li>Abra o seu ambiente de desenvolvimento (IDE) ou editor de texto.</li>
+        <li>Inclua a biblioteca padrão de entrada e saída: <code>#include &lt;stdio.h&gt;</code>.</li>
+        <li>Defina o código da cor desejada como uma macro ou string (ex: <code>"\033[32m"</code> para verde).</li>
+        <li>Imprima o código da cor imediatamente antes do texto no seu <code>printf</code>.</li>
+        <li>Sempre imprima o código de "Reset" (<code>"\033[0m"</code>) no final para a cor não vazar para o resto do terminal.</li>
+    </ol>
+
+    <h4 id="tabela-cores">Principais Códigos e Seus Efeitos</h4>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Cor / Estilo</th>
+                <th>Código ANSI</th>
+                <th>Exemplo de Uso em C</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Vermelho (Texto)</td>
+                <td>\033[31m</td>
+                <td><code>printf("\033[31m Falha Crítica \033[0m");</code></td>
+            </tr>
+            <tr>
+                <td>Verde (Texto)</td>
+                <td>\033[32m</td>
+                <td><code>printf("\033[32m Compilado com Sucesso! \033[0m");</code></td>
+            </tr>
+            <tr>
+                <td>Fundo Azul</td>
+                <td>\033[44m</td>
+                <td><code>printf("\033[44m Tela Azul \033[0m");</code></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h5 id="multimidia">Demonstrações Visuais e Auditivas</h5>
+
+    <div class="placeholder-box">
+        <p><em>(Substitua "sua-imagem.jpg" pelo nome do seu arquivo de imagem)</em></p>
+        <img src="sua-imagem.jpg" alt="Captura de tela de um terminal mostrando a execução de um programa em C com textos coloridos usando ANSI" style="max-width: 100%;">
+    </div>
+
+    <div class="placeholder-box">
+        <p><em>(Substitua "seu-video.mp4" pelo nome do seu arquivo de vídeo)</em></p>
+        <video width="100%" controls>
+            <source src="seu-video.mp4" type="video/mp4">
+            Seu navegador não suporta a exibição deste vídeo.
+        </video>
+    </div>
+
+    <div class="placeholder-box">
+        <p><em>(Substitua "seu-audio.mp3" pelo nome do seu arquivo de áudio - Ex: Um podcast sobre C)</em></p>
+        <audio controls>
+            <source src="seu-audio.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </div>
+
+    <h6 id="contato">Ficou com alguma dúvida sobre C ou ANSI?</h6>
+
+    <form action="#" method="POST">
+        <label for="nome">Seu Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+        <label for="email">Seu E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+
+        <label for="mensagem">Deixe sua Mensagem ou Dúvida:</label>
+        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva aqui..." required></textarea>
+
+        <button type="submit">Enviar Mensagem</button>
+        <button type="reset">Redefinir Campos</button>
+    </form>
+
+    <hr style="margin-top: 40px; border: 0; border-top: 1px solid #ccc;">
+
+    <p><strong>Navegação Adicional:</strong></p>
+    <ul>
+        <li><a href="https://www.instagram.com/seuarroba" target="_blank" rel="noopener noreferrer">Acesse meu Instagram para mais dicas de Programação em C (Link Externo)</a></li>
+        <li><a href="exemplos_avancados.html">Acessar a página de Scripts Avançados de ANSI (Link Interno)</a></li>
+    </ul>
+
+</body>
+</html>

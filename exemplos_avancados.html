@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Aprenda comandos ANSI avançados para mover o cursor, apagar linhas e aplicar estilos combinados em C.">
+    <meta name="keywords" content="C, programação, terminal, códigos ANSI, cursor, formatação avançada">
+    <meta name="author" content="Coloque Seu Nome Aqui">
+    
+    <title>Scripts Avançados de ANSI</title>
+
+    <style>
+        /* Estilos básicos idênticos aos da página principal para manter a consistência */
+        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }
+        nav { background: #f4f4f4; padding: 10px 20px; border-radius: 8px; margin-bottom: 30px; }
+        nav a { margin-right: 15px; text-decoration: none; color: #0056b3; font-weight: bold; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f8f9fa; }
+        .code-block { background: #e9ecef; padding: 15px; border-radius: 8px; font-family: monospace; overflow-x: auto; }
+        .note-box { background: #fff3cd; border-left: 5px solid #ffecb5; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">⬅ Voltar para a Principal</a>
+        <a href="#cursor">Mover Cursor</a>
+        <a href="#apagar">Apagar Linhas</a>
+        <a href="#cores-estilos">Cores e Estilos</a>
+        <a href="#compatibilidade">Compatibilidade</a>
+    </nav>
+
+    <h1>Scripts Avançados de ANSI no Terminal</h1>
+    <p>Além de mudar as cores do texto e do fundo, os códigos ANSI permitem criar interfaces ricas no terminal manipulando a posição do cursor e apagando conteúdos dinamicamente.</p>
+
+    <h2 id="cursor">Mover o Cursor [cite: 14]</h2>
+    <p>Você pode mover o cursor para qualquer direção usando as sequências abaixo:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Código ANSI</th>
+                <th>Função</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><code>\033[F</code></td><td>Move para cima uma linha [cite: 15]</td></tr>
+            <tr><td><code>\033[E</code></td><td>Move para baixo uma linha [cite: 15]</td></tr>
+            <tr><td><code>\033[&lt;N&gt;A</code></td><td>Move N linhas para cima [cite: 15]</td></tr>
+            <tr><td><code>\033[&lt;N&gt;B</code></td><td>Move N linhas para baixo [cite: 15]</td></tr>
+            <tr><td><code>\033[&lt;N&gt;C</code></td><td>Move N colunas para a direita [cite: 15]</td></tr>
+            <tr><td><code>\033[&lt;N&gt;D</code></td><td>Move N colunas para a esquerda [cite: 15]</td></tr>
+            <tr><td><code>\033[&lt;linha&gt;;&lt;coluna&gt;H</code></td><td>Move para uma posição específica (coordenadas) [cite: 15]</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Salvar e Restaurar a Posição do Cursor [cite: 18]</h3>
+    <table>
+        <thead>
+            <tr><th>Código ANSI</th><th>Função</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><code>\033[s</code></td><td>Salva a posição atual do cursor [cite: 19]</td></tr>
+            <tr><td><code>\033[u</code></td><td>Retorna a última posição salva do cursor [cite: 19]</td></tr>
+        </tbody>
+    </table>
+
+    <h2 id="apagar">Apagar Linhas e Caracteres [cite: 16]</h2>
+    <p>Ideal para criar barras de carregamento ou limpar telas de menus:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Código ANSI</th>
+                <th>Função</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><code>\033[K</code></td><td>Apaga do cursor até o final da linha [cite: 17]</td></tr>
+            <tr><td><code>\033[1K</code></td><td>Apaga do cursor até o início da linha [cite: 17]</td></tr>
+            <tr><td><code>\033[2K</code></td><td>Apaga a linha inteira [cite: 17]</td></tr>
+            <tr><td><code>\033[J</code></td><td>Apaga do cursor até o final da tela [cite: 17]</td></tr>
+            <tr><td><code>\033[1J</code></td><td>Apaga do cursor até o início da tela [cite: 17]</td></tr>
+            <tr><td><code>\033[2J</code></td><td>Apaga a tela inteira [cite: 17]</td></tr>
+        </tbody>
+    </table>
+
+    <h2 id="cores-estilos">Cores e Estilos Extras [cite: 26]</h2>
+    <p>O formato padrão para combinar configurações é: <code>\033[ESTILO; COR_TEXTO; COR_FUNDOm</code>. Os comandos podem ser combinados usando ponto e vírgula (<code>;</code>)[cite: 30, 31].</p>
+    
+    <h3>Lista de Estilos</h3>
+    <ul>
+        <li><strong>Negrito:</strong> <code>\033[1m</code> [cite: 27]</li>
+        <li><strong>Sublinhado:</strong> <code>\033[4m</code> [cite: 28]</li>
+        <li><strong>Pisca:</strong> <code>\033[5m</code> (Nem sempre funciona) [cite: 29]</li>
+        <li><strong>Redefinir (Volta ao normal):</strong> <code>\033[0m</code> [cite: 29]</li>
+    </ul>
+
+    <h3>Tabela Resumo de Cores [cite: 25]</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Cor</th>
+                <th>Código de Texto</th>
+                <th>Código de Fundo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Preto</td><td><code>\033[30m</code></td><td><code>\033[40m</code></td></tr>
+            <tr><td>Vermelho</td><td><code>\033[31m</code></td><td><code>\033[41m</code></td></tr>
+            <tr><td>Verde</td><td><code>\033[32m</code></td><td><code>\033[42m</code></td></tr>
+            <tr><td>Amarelo</td><td><code>\033[33m</code></td><td><code>\033[43m</code></td></tr>
+            <tr><td>Azul</td><td><code>\033[34m</code></td><td><code>\033[44m</code></td></tr>
+            <tr><td>Magenta</td><td><code>\033[35m</code></td><td><code>\033[45m</code></td></tr>
+            <tr><td>Ciano</td><td><code>\033[36m</code></td><td><code>\033[46m</code></td></tr>
+            <tr><td>Branco</td><td><code>\033[37m</code></td><td><code>\033[47m</code></td></tr>
+        </tbody>
+    </table>
+
+    <h2 id="compatibilidade">Observações e Compatibilidade [cite: 20]</h2>
+    <div class="note-box">
+        <p><strong>Sistemas Suportados:</strong> Funciona no CMD, PowerShell, Linux Terminal e Mac Terminal (desde que suportem ANSI)[cite: 21].</p>
+        
+        <p><strong>Configuração no Windows:</strong> No CMD do Windows, pode ser necessário ativar o suporte ANSI[cite: 22]. Para isso, execute o comando abaixo no terminal:</p>
+        <div class="code-block">
+            reg add HKCU\Console /v Virtual TerminalLevel /t REG_DWORD /d 1 /f [cite: 23]
+        </div>
+        
+        <p>Para garantir compatibilidade de forma nativa no Windows sem alterar registros, pode-se usar a biblioteca <code>windows.h</code> e a função <code>SetConsoleCursorPosition()</code> em seu código C[cite: 24].</p>
+    </div>
+
+</body>
+</html>
