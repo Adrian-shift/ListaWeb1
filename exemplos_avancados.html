@@ -45,13 +45,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr><td><code>\033[F</code></td><td>Move para cima uma linha [cite: 15]</td></tr>
-            <tr><td><code>\033[E</code></td><td>Move para baixo uma linha [cite: 15]</td></tr>
-            <tr><td><code>\033[&lt;N&gt;A</code></td><td>Move N linhas para cima [cite: 15]</td></tr>
-            <tr><td><code>\033[&lt;N&gt;B</code></td><td>Move N linhas para baixo [cite: 15]</td></tr>
-            <tr><td><code>\033[&lt;N&gt;C</code></td><td>Move N colunas para a direita [cite: 15]</td></tr>
-            <tr><td><code>\033[&lt;N&gt;D</code></td><td>Move N colunas para a esquerda [cite: 15]</td></tr>
-            <tr><td><code>\033[&lt;linha&gt;;&lt;coluna&gt;H</code></td><td>Move para uma posição específica (coordenadas) [cite: 15]</td></tr>
+            <tr><td><code>\033[F</code></td><td>Move para cima uma linha</td></tr>
+            <tr><td><code>\033[E</code></td><td>Move para baixo uma linha</td></tr>
+            <tr><td><code>\033[&lt;N&gt;A</code></td><td>Move N linhas para cima</td></tr>
+            <tr><td><code>\033[&lt;N&gt;B</code></td><td>Move N linhas para baixo</td></tr>
+            <tr><td><code>\033[&lt;N&gt;C</code></td><td>Move N colunas para a direita</td></tr>
+            <tr><td><code>\033[&lt;N&gt;D</code></td><td>Move N colunas para a esquerda</td></tr>
+            <tr><td><code>\033[&lt;linha&gt;;&lt;coluna&gt;H</code></td><td>Move para uma posição específica (coordenadas)</td></tr>
         </tbody>
     </table>
 
@@ -61,12 +61,12 @@
             <tr><th>Código ANSI</th><th>Função</th></tr>
         </thead>
         <tbody>
-            <tr><td><code>\033[s</code></td><td>Salva a posição atual do cursor [cite: 19]</td></tr>
-            <tr><td><code>\033[u</code></td><td>Retorna a última posição salva do cursor [cite: 19]</td></tr>
+            <tr><td><code>\033[s</code></td><td>Salva a posição atual do cursor</td></tr>
+            <tr><td><code>\033[u</code></td><td>Retorna a última posição salva do cursor</td></tr>
         </tbody>
     </table>
 
-    <h2 id="apagar">Apagar Linhas e Caracteres [cite: 16]</h2>
+    <h2 id="apagar">Apagar Linhas e Caracteres</h2>
     <p>Ideal para criar barras de carregamento ou limpar telas de menus:</p>
     <table>
         <thead>
@@ -76,27 +76,27 @@
             </tr>
         </thead>
         <tbody>
-            <tr><td><code>\033[K</code></td><td>Apaga do cursor até o final da linha [cite: 17]</td></tr>
-            <tr><td><code>\033[1K</code></td><td>Apaga do cursor até o início da linha [cite: 17]</td></tr>
-            <tr><td><code>\033[2K</code></td><td>Apaga a linha inteira [cite: 17]</td></tr>
-            <tr><td><code>\033[J</code></td><td>Apaga do cursor até o final da tela [cite: 17]</td></tr>
-            <tr><td><code>\033[1J</code></td><td>Apaga do cursor até o início da tela [cite: 17]</td></tr>
-            <tr><td><code>\033[2J</code></td><td>Apaga a tela inteira [cite: 17]</td></tr>
+            <tr><td><code>\033[K</code></td><td>Apaga do cursor até o final da linha</td></tr>
+            <tr><td><code>\033[1K</code></td><td>Apaga do cursor até o início da linha</td></tr>
+            <tr><td><code>\033[2K</code></td><td>Apaga a linha inteira</td></tr>
+            <tr><td><code>\033[J</code></td><td>Apaga do cursor até o final da tela</td></tr>
+            <tr><td><code>\033[1J</code></td><td>Apaga do cursor até o início da tela</td></tr>
+            <tr><td><code>\033[2J</code></td><td>Apaga a tela inteira</td></tr>
         </tbody>
     </table>
 
-    <h2 id="cores-estilos">Cores e Estilos Extras [cite: 26]</h2>
-    <p>O formato padrão para combinar configurações é: <code>\033[ESTILO; COR_TEXTO; COR_FUNDOm</code>. Os comandos podem ser combinados usando ponto e vírgula (<code>;</code>)[cite: 30, 31].</p>
+    <h2 id="cores-estilos">Cores e Estilos Extras</h2>
+    <p>O formato padrão para combinar configurações é: <code>\033[ESTILO; COR_TEXTO; COR_FUNDOm</code>. Os comandos podem ser combinados usando ponto e vírgula (<code>;</code>).</p>
     
     <h3>Lista de Estilos</h3>
     <ul>
-        <li><strong>Negrito:</strong> <code>\033[1m</code> [cite: 27]</li>
-        <li><strong>Sublinhado:</strong> <code>\033[4m</code> [cite: 28]</li>
-        <li><strong>Pisca:</strong> <code>\033[5m</code> (Nem sempre funciona) [cite: 29]</li>
-        <li><strong>Redefinir (Volta ao normal):</strong> <code>\033[0m</code> [cite: 29]</li>
+        <li><strong>Negrito:</strong> <code>\033[1m</code></li>
+        <li><strong>Sublinhado:</strong> <code>\033[4m</code></li>
+        <li><strong>Pisca:</strong> <code>\033[5m</code> (Nem sempre funciona)</li>
+        <li><strong>Redefinir (Volta ao normal):</strong> <code>\033[0m</code></li>
     </ul>
 
-    <h3>Tabela Resumo de Cores [cite: 25]</h3>
+    <h3>Tabela Resumo de Cores</h3>
     <table>
         <thead>
             <tr>
@@ -117,16 +117,16 @@
         </tbody>
     </table>
 
-    <h2 id="compatibilidade">Observações e Compatibilidade [cite: 20]</h2>
+    <h2 id="compatibilidade">Observações e Compatibilidade</h2>
     <div class="note-box">
-        <p><strong>Sistemas Suportados:</strong> Funciona no CMD, PowerShell, Linux Terminal e Mac Terminal (desde que suportem ANSI)[cite: 21].</p>
+        <p><strong>Sistemas Suportados:</strong> Funciona no CMD, PowerShell, Linux Terminal e Mac Terminal (desde que suportem ANSI).</p>
         
-        <p><strong>Configuração no Windows:</strong> No CMD do Windows, pode ser necessário ativar o suporte ANSI[cite: 22]. Para isso, execute o comando abaixo no terminal:</p>
+        <p><strong>Configuração no Windows:</strong> No CMD do Windows, pode ser necessário ativar o suporte ANSI. Para isso, execute o comando abaixo no terminal:</p>
         <div class="code-block">
-            reg add HKCU\Console /v Virtual TerminalLevel /t REG_DWORD /d 1 /f [cite: 23]
+            reg add HKCU\Console /v Virtual TerminalLevel /t REG_DWORD /d 1 /f
         </div>
         
-        <p>Para garantir compatibilidade de forma nativa no Windows sem alterar registros, pode-se usar a biblioteca <code>windows.h</code> e a função <code>SetConsoleCursorPosition()</code> em seu código C[cite: 24].</p>
+        <p>Para garantir compatibilidade de forma nativa no Windows sem alterar registros, pode-se usar a biblioteca <code>windows.h</code> e a função <code>SetConsoleCursorPosition()</code> em seu código C.</p>
     </div>
 
 </body>
